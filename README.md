@@ -162,6 +162,22 @@ webhook-report-rejected: true
 webhook-report-deleted: false
 
 # ============================================
+# Database Settings
+# ============================================
+
+# Database type: sqlite or mysql
+database-type: sqlite
+
+# MySQL settings (only if database-type: mysql)
+mysql:
+  host: "localhost"
+  port: 3306
+  database: "lreport"
+  username: "root"
+  password: ""
+  table-prefix: "lreport_"
+
+# ============================================
 # Reward System
 # ============================================
 
