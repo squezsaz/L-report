@@ -1,0 +1,23 @@
+name: L-report
+main: com.lreport.Main
+version: 1.1.1
+author: squezsaz
+description: Player Reporting Plugin with GUI - 1.18+ to 1.21+ compatible
+api-version: 1.18
+softdepend: [PlaceholderAPI]
+commands:
+  rapor:
+    description: Oyuncu raporla
+    aliases: [report, şikayet]
+    permission: lreport.player
+  raporadmin:
+    description: Rapor yönetimi
+    aliases: [reportadmin, raporyönet]
+    permission: lreport.admin
+permissions:
+  lreport.admin:
+    description: Admin permission for report management
+    default: op
+  lreport.player:
+    description: Player permission to report
+    default: true
