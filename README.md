@@ -23,6 +23,7 @@
 - [FAQ](#faq)
 - [License](#license)
 - [PlaceholderAPI](#placeholderapi)
+- [API Documentation](#api-documentation)
 
 ---
 
@@ -324,6 +325,74 @@ Placeholders
 * `%lreport_plugin_version%`: The current version of the L-Report plugin.
 * `%lreport_cooldown%`: The global cooldown setting from the config.
 * `%lreport_online_players%`: Number of players currently online.
+
+
+
+
+## Developer API Integration
+
+Integrate L-report into your own plugin to interact with our reporting system. Follow the steps below to get started.
+
+### 1. Add Repository
+First, add the JitPack repository to the `<repositories>` section of your `pom.xml` file:
+
+```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+```
+
+### 2. Add Dependency
+Next, add the L-report API dependency to your `<dependencies>` section. Replace `TAG` with the version you wish to use (e.g., `v1.0.0`).
+
+```xml
+<dependencies>
+    <dependency>
+        <groupId>com.github.squezsaz</groupId>
+        <artifactId>L-report</artifactId>
+        <version>TAG</version>
+        <scope>provided</scope>
+    </dependency>
+</dependencies>
+```
+
+> **Note:** Since your plugin will require L-report at runtime, keep the scope as `provided` and remember to add `depend: [L-report]` to your `plugin.yml` file.
+
+### 3. Usage Example
+You can access the API by getting an instance through the main class:
+
+```java
+import com.lreport.api.LReportAPI;
+
+public class MyPlugin extends JavaPlugin {
+    @Override
+    public void onEnable() {
+        // Accessing the API
+        LReportAPI api = LReport.getApi();
+        
+        if (api != null) {
+            int pendingReports = api.getPendingReportCount();
+            getLogger().info("There are currently " + pendingReports + " pending reports.");
+        }
+    }
+}
+```
+
+---
+
+###  API Documentation
+For a detailed list of methods and descriptions, please visit our online JavaDoc page:
+👉 [L-report JavaDocs](https://javadoc.jitpack.io/com/github/squezsaz/L-report/v1.1.5/javadoc/com/lreport/api/LReportAPI.html)
+
+---
+
+### Quick Tips:
+*   **Version:** If you want to always pull the latest code, you can use `master-SNAPSHOT` as the `<version>`, though fixed versions like `v1.0.0` are recommended for stability.
+*   **JitPack Logs:** If the dependency fails to download, check the build logs on JitPack to identify the error.
+
 
 ## Contact
 
