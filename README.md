@@ -251,7 +251,7 @@ MIT License
 
 ---
 
-Placeholders
+## PlaceholderAPI
 
 ###  General Report Statistics
 * `%lreport_total_reports%`: Total number of reports.
