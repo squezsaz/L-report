@@ -385,7 +385,7 @@ public class MyPlugin extends JavaPlugin {
 
 ###  API Documentation
 For a detailed list of methods and descriptions, please visit our online JavaDoc page:
-👉 [L-report JavaDocs](https://javadoc.jitpack.io/com/github/squezsaz/L-report/latest/javadoc)
+👉 [L-report JavaDocs](https://javadoc.jitpack.io/com/github/squezsaz/L-report/v1.1.6/javadoc)
 
 ---
 
